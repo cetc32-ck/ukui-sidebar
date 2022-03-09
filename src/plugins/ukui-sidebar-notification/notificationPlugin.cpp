@@ -39,19 +39,6 @@ NotificationPlugin::NotificationPlugin()
     //初始化界面
     initUI();
 
-
-//    //新建一个监控dbus消息的线程
-//    MonitorThread* pMonitorThread = new MonitorThread(this);
-//    QGSettings* pEnablenotice = new QGSettings("org.ukui.control-center.notice", "", this);
-//    if(pEnablenotice->get("enable-notice").toBool()) {
-//        pMonitorThread->start();
-//        pMonitorThread->switchEnable(pEnablenotice->get("enable-notice").toBool());
-//    }
-
-//    connect(pEnablenotice, &QGSettings::changed, [=](){
-//        pMonitorThread->switchEnable(pEnablenotice->get("enable-notice").toBool());
-//    });
-
     //注册dbus接口，接收通知中心发送的通知信息
     NotificationDbus *notifyDbus = new NotificationDbus(this);
 
